@@ -114,3 +114,4 @@ async function fetchAndRenderImages() {
     console.error('Помилка при запиті:', error);
   }
 }
+console.log('hi');
