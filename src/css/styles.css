@@ -158,3 +158,27 @@ button[type='submit']:active {
 .hidden {
   display: none;
 }
+.load-more {
+  display: none;
+  padding: 12px 24px;
+  margin: 24px auto;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #4a90e2;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.load-more:hover {
+  background-color: #357abd;
+  transform: translateY(-2px);
+}
+
+.load-more:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}

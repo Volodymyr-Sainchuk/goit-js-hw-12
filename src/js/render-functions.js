@@ -2,6 +2,7 @@ import SimpleLightbox from 'simplelightbox';
 const container = document.querySelector('.gallery');
 const lightBox = new SimpleLightbox('.gallery a');
 const loaderContainer = document.querySelector('.loader-container');
+const loadMoreBtn = document.querySelector('.load-more');
 export async function createGallery(images) {
   const markup = images
     .map(image => {
@@ -48,8 +49,9 @@ export function hideLoader() {
   loaderContainer.classList.add('hidden');
 }
 export function showLoadMoreButton() {
-  loaderContainer.classList.add('show-more');
+  loadMoreBtn.style.display = 'block';
 }
+
 export function hideLoadMoreButton() {
-  loaderContainer.classList.remove('show-more');
+  loadMoreBtn.style.display = 'none';
 }

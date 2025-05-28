@@ -52,6 +52,15 @@ loadMoreBtn.addEventListener('click', async () => {
   all.showLoader();
   await fetchAndRenderImages();
   all.hideLoader();
+  const firstCard = container.querySelector('.gallery-item');
+  if (firstCard) {
+    const cardHeight = firstCard.getBoundingClientRect().height;
+    window.scrollBy({
+      top: cardHeight * 2,
+      left: 0,
+      behavior: 'smooth',
+    });
+  }
 });
 
 async function fetchAndRenderImages() {
@@ -82,16 +91,6 @@ async function fetchAndRenderImages() {
     lightbox.refresh();
 
     totalLoaded += hits.length;
-
-    const firstCard = container.querySelector('.gallery-item');
-    if (firstCard) {
-      const cardHeight = firstCard.getBoundingClientRect().height;
-      window.scrollBy({
-        top: cardHeight * 2,
-        left: 0,
-        behavior: 'smooth',
-      });
-    }
 
     if (totalLoaded >= totalHits) {
       loadMoreBtn.style.display = 'none';
